@@ -10,11 +10,13 @@
     "rollup-plugin-svelte": "^5.0.3",
     "rollup-plugin-terser": "^4.0.4",
     "svelte": "^3.0.0",
+    "svelte-preprocess": "^3.1.1",
     "ws": ">=3.3.1"
   },
   "dependencies": {
     "sirv-cli": "^0.4.4",
     "svelte-icons": "^1.1.0",
+    "svelte-image": "^0.0.12",
     "ws": ">=3.3.1"
   },
   "scripts": {

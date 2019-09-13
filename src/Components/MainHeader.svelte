@@ -1,7 +1,7 @@
 <script>
   import FaFacebookF from "svelte-icons/fa/FaFacebookF.svelte";
   import FaInstagram from "svelte-icons/fa/FaInstagram.svelte";
-  import FaTwitter from 'svelte-icons/fa/FaTwitter.svelte';
+  import FaTwitter from "svelte-icons/fa/FaTwitter.svelte";
 </script>
 
 <style>
@@ -31,7 +31,9 @@
     font-weight: 700;
     padding: 10px 10px 10px 0px;
   }
-
+  .top-header a:hover {
+    opacity: 80%;
+  }
   .social_icons {
     display: flex;
     align-content: flex-end;
@@ -45,6 +47,9 @@
 
   .icon a {
     color: var(--main_light);
+  }
+  .icon a:hover {
+    opacity: 80%;
   }
   .header-inner {
     background: var(--main_bg);
@@ -103,7 +108,7 @@
           <a
             target="_blank"
             rel="noopener noreferrer"
-            href="https://www.facebook.com/labitagora">
+            href="https://www.instagram.com/labitagora">
             <FaInstagram />
           </a>
         </div>
@@ -111,7 +116,7 @@
           <a
             target="_blank"
             rel="noopener noreferrer"
-            href="https://www.facebook.com/labitagora">
+            href="https://www.twitter.com/labitagora">
             <FaTwitter />
           </a>
         </div>

@@ -14,12 +14,17 @@ body {
   width: 100%;
   max-width: 1210px;
   margin: 0 auto;
-  height: inherit;
 }
 
 .inner {
 	width: 100%;
 	max-width: 1150px;
 	margin: 0 auto;
-	height: inherit;
+}
+
+h1{
+  color:var(--main_black);
+  font-family: var(--header_font);
+  font-size: 1rem;
+  text-transform: uppercase;
 }
