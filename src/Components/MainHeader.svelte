@@ -77,6 +77,7 @@
   .page_menu a:hover {
     background: var(--main_focus);
     color: var(--main_light);
+    border-radius: 3px;
   }
 
   .featured-nav-item {
