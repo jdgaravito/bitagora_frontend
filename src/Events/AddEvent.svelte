@@ -5,6 +5,24 @@
   import FaRegCalendar from "svelte-icons/fa/FaRegCalendar.svelte";
   import { internationalize } from "timeUtils";
   import { formatDate } from "timeUtils";
+  
+
+   let name = "";
+   let startDate = "";
+   let startTime = "";
+   let endDate = "";
+   let endTime ="";
+   let category = "";
+   let location = "";
+   let description = ""
+   let streetAddress = "";
+   let price = "";
+   let image = "";
+   let favStatus = false;
+  
+  
+  
+  
   let items = [
     { value: "art", label: "Arte" },
     { value: "bike", label: "Bici" },
@@ -44,6 +62,17 @@
   let dateChosen;
   let formattedSelected;
   let moreDays;
+
+  function addEvent() {
+    const newEvent = {
+      id: Math.random().toString(),
+      name: name,
+      description: description,
+      startDate: formattedSelected,
+
+    };
+    events = [newEvent, ...events]
+  }
 </script>
 
 <style>
@@ -75,15 +104,10 @@
     border-color: var(--main_black);
   }
   label {
-    display: block;
-    margin-bottom: 0.5rem;
+    margin-bottom: 1rem;
     width: 100%;
     font-family: var(--main_header);
-    line-height: 10px;
-    padding: 10px 0 10px 0;
-    text-transform: uppercase;
-    font-weight: 700;
-  }
+    }
   textarea {
     font-family: inherit;
   }
@@ -122,13 +146,12 @@
     line-height: 16px;
     padding: 10px;
     font-size: 0.9rem;
-  
   }
   .icon {
     width: 30px;
     height: 30px;
     padding: 0 10px 0 10px;
-  }
+  } 
   #eventTime {
     font-family: inherit;
     border-color: #d8d8d8;
@@ -143,8 +166,9 @@
 </style>
 
 <main class="inner">
-  <div class="form-wrap">
-    <form class="add-event-form">
+  <form on:submit|preventDefault="{addEvent}">
+    <div class="form-wrap">
+    <h2>Detalles del evento</h2>
       <div class="form-control">
         <label for="name">Nombre del Evento</label>
         <input
@@ -152,7 +176,8 @@
           type="text"
           id="name"
           placeholder="Escribe el nombre del evento"
-          required />
+          required 
+          bind:value={name}/>
       </div>
 
       <div class="form-control">
@@ -162,7 +187,7 @@
           type="text"
           id="description"
           placeholder="Añade una pequeña descripción del evento"
-          required />
+          required bind:value={description}/>
       </div>
       <div class="form-control themed">
         <label for="name">Categoría del Evento</label>
@@ -325,6 +350,29 @@
           value="multipleDays" />
         Si
       </div>
-    </form>
-  </div>
+      <div class="form-control">
+        <label for="location">Nombre del lugar</label>
+        <input
+          class="inputform"
+          type="text"
+          id="location"
+          placeholder="Escribe el nombre del lugar"
+          required 
+          bind:value={location}/>
+      </div>
+
+       <div class="form-control">
+        <label for="streetAddress" >Dirección del lugar</label>
+        <input
+          class="inputform"
+          type="text"
+          id="location"
+          placeholder="¿Cual es la dirección?"
+          required 
+          bind:value={streetAddress}/>
+      </div>
+
+      <button class="" type="submit">Guardar Evento</button>
+    </div>
+  </form>
 </main>

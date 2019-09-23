@@ -167,7 +167,7 @@
     </div>
   </header>
   <div class="price-tag">
-    {#if price === '0' || isAccessibleForFree === 'true'}
+    {#if price === '0'}
       Gratis
     {:else}${price}{/if}
   </div>
